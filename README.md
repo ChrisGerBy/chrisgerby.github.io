@@ -1,6 +1,8 @@
 # Presentation "Canvas VS SVG"
 ## Transcript of presentation
 
+**Link to presentation:** https://chrisgerby.github.io/presentation-canvas-vs-svg/
+
 Hello! My name is Krystsina. Today I’m going to talk about  Canvas and SVG technologies, what they have in common and what are the differences between them.
 
 Let begin with common features.
