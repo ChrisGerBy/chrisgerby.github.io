@@ -34,6 +34,14 @@
 				<p>
 					<small>Created by Krystsina Gerko</small>
 				</p>
+				<aside class="notes">
+					Canvas and SVG technologies:
+					<ul>
+						<li>what they have in common, </li>
+						<li>how they differ one from the other, </li>
+						<li>how to define which of them wo use in different cases.</li>
+					</ul>
+				</aside>
 			</section>
 			<section>
 				<h2>Common features</h2>
@@ -52,6 +60,13 @@
 </svg>								
 					</code></pre>
 				</div>	
+				<aside class="notes">
+					<ul>
+						<li>Graphics: pictures, lines, shapes, logos, icons, graphs.</li>
+						<li>HTML5, W3 recommendations, browsers support</li>
+						<li>HTML elements</li>
+					</ul>
+				</aside>
 			</section>
 			<section>
 				<h2>SVG vs Canvas</h2>
@@ -77,6 +92,10 @@
 						</tr>
 					</tbody>
 				</table>
+				<aside class="notes">
+					<p>The first line - SVG.</p>
+					<p>The second line - CANVAS.</p>
+				</aside>
 			</section>
 			<section>
 				<h2>Canvas vs SVG</h2>
@@ -106,6 +125,10 @@
 						</tr>
 					</tbody>
 				</table>
+				<aside class="notes">
+						<p>Canvas - HTML & JS</p>
+						<p>SVG - HTML & XML</p>
+				</aside>
 			</section>
 			<section>
 				<section>
@@ -120,6 +143,9 @@
 let canvas = document.getElementById("canvas");
 let ctx = canvas.getContext('2d');
 					</code></pre>
+					<aside class="notes">
+						We can create rectangles, lines, circles, texts and other shapes.
+					</aside>
 				</section>
 				<section>
 					<h2>Rectangles</h2>
@@ -140,6 +166,9 @@ ctx.stroke();
 							</code></pre>
 						</div>
 					</div>
+					<aside class="notes">
+						Filled rectangles and empty rectangles (only border).
+					</aside>
 				</section>
 				<section>
 					<h2>Lines</h2>
@@ -149,6 +178,9 @@ ctx.moveTo(60, 60); // start
 ctx.lineTo(200, 100); // end
 ctx.stroke();
 					</code></pre>
+					<aside class="notes">
+						Don't forget method stroke().
+					</aside>
 				</section>
 				<section>
 					<h2>Circles</h2>
@@ -178,6 +210,9 @@ ctx.stroke();
 						<a href="http://www.effectgames.com/demos/canvascycle/">http://www.effectgames.com/demos/canvascycle/</a>
 						<a href="http://1000.chromeexperiments.com/">http://1000.chromeexperiments.com/</a>
 					</div>
+					<aside class="notes">
+						Canvas is used for game applications.
+					</aside>
 				</section>
 			</section>
 			<section>
@@ -195,6 +230,9 @@ ctx.stroke();
 </svg>
 						</code>
 					</pre>
+					<aside class="notes">
+						SVG uses HTML and XML.
+					</aside>
 				</section>
 				<section>
 					<h2>Rectangles</h2>
@@ -211,6 +249,13 @@ ctx.stroke();
 </svg>
 						</code>
 					</pre>
+					<aside class="notes">
+						<ul>
+							<li>Width of the rectangle</li>
+							<li>Height of the rectangle</li>
+							<li>Style of the rectangle: bg-color, border width, border color.</li>
+						</ul>
+					</aside>
 				</section>
 				<section>
 					<h2>Lines</h2>
@@ -227,6 +272,12 @@ ctx.stroke();
 </svg>
 						</code>
 					</pre>
+					<aside class="notes">
+						<ul>
+							<li>Coordinates X and Y</li>
+							<li>Style of the line: color, width.</li>
+						</ul>
+					</aside>
 				</section>
 				<section>
 					<h2>More possibilities of <span class="red">SVG</span></h2>
@@ -266,6 +317,9 @@ ctx.stroke();
 							<use xlink:href="#R1" transform="rotate(288 390 150)" />
 						</svg>
 					</div>
+					<aside class="notes">
+						Polygon, star, ellipse.
+					</aside>
 				</section>
 			</section>
 			<section>
@@ -310,7 +364,13 @@ ctx.stroke();
 								repeatCount="2"
 								id="circ-anim"/>
 						</svg>
-					</div>		
+					</div>
+					<aside class="notes">
+						<ul>
+							<li>How to modify images</li>
+							<li>Support for event handlers</li>
+						</ul>
+					</aside>
 				</section>
 				<section>
 					<h2>Canvas vs SVG</h2>
@@ -337,6 +397,12 @@ ctx.stroke();
 							</tr>
 						</tbody>
 					</table>
+					<aside class="notes">
+						<ul>
+							<li>Size of the files</li>
+							<li>Conclusion</li>
+						</ul>
+					</aside>
 				</section>
 			</section>
 			<section>
