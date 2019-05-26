@@ -1,0 +1,379 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Canvas vs SVG</title>
+
+		<link rel="stylesheet" href="css/reset.css">
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/white.css">
+		<link rel="stylesheet" href="css/content.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/monokai.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+	<div class="reveal">
+		<div class="slides">
+			<section>
+				<h1>Canvas vs SVG</h1>
+				<canvas id="main"width="800" height="300"></canvas>
+				<h4>RSSchool-2019-Q1 </h4>
+				<h5>Task: <a href="https://github.com/rolling-scopes-school/tasks/blob/2018-Q3/tasks/presentation.md">Presentation</a></h5>
+				<p>
+					<small>Created by Krystsina Gerko</small>
+				</p>
+			</section>
+			<section>
+				<h2>Common features</h2>
+				<ul>
+					<li class="fragment">are used to create and develop images and shapes</li>
+					<li class="fragment">W3 recommendation</li>
+					<li class="fragment">HTML elements</li>
+				</ul>
+				<div class="fragment">
+					<pre><code>
+<canvas id="canv" width="500" height="500"></canvas>								
+					</code></pre>			
+					<pre><code>
+<svg id="pic" width="500" height="500">
+  <rect width="200" height="100"></rect>
+</svg>								
+					</code></pre>
+				</div>	
+			</section>
+			<section>
+				<h2>SVG vs Canvas</h2>
+				<img class="graph-lines" src="images/canvasVSsvg.png">
+				<table class="comparison fragment">
+					<thead>
+						<tr>
+							<th></th>
+							<th>Canvas</th>
+							<th>SVG</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td class="small-text">Image Format</td>
+							<td class="fragment">Bitmap</td>
+							<td class="fragment">Vector</td>
+						</tr>
+						<tr>
+							<td class="small-text fragment">Quality by resizing</td>
+							<td class="fragment red">Low</td>
+							<td class="fragment green">High</td>
+						</tr>
+					</tbody>
+				</table>
+			</section>
+			<section>
+				<h2>Canvas vs SVG</h2>
+				<table class="comparison">
+					<thead>
+						<tr>
+							<th></th>
+							<th>Canvas</th>
+							<th>SVG</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td class="small-text">Image Format</td>
+							<td>Bitmap</td>
+							<td >Vector</td>
+						</tr>
+						<tr>
+							<td class="small-text ">Quality by resizing</td>
+							<td class="red">Low</td>
+							<td class="green">High</td>
+						</tr>
+						<tr>
+							<td class="small-text fragment">Knowledge</td>
+							<td class="fragment">HTML & JS</td>
+							<td class="fragment">HTML & XML</td>
+						</tr>
+					</tbody>
+				</table>
+			</section>
+			<section>
+				<section>
+					<h2>How to begin with <span class="red">canvas</span></h2>
+					<p>HTML</p>
+					<pre><code>
+&lt;canvas id="canvas" width="500" height="300"&gt;&lt;/canvas&gt;
+					</code></pre>
+
+					<p>JavaScript</p>
+					<pre><code>
+let canvas = document.getElementById("canvas");
+let ctx = canvas.getContext('2d');
+					</code></pre>
+				</section>
+				<section>
+					<h2>Rectangles</h2>
+					<p>ctx.fillRect(x, y, width, height);</p>
+					<div class="grid-rect">
+						<div>
+							<canvas id="canvas-rect1" width="300" height="200"></canvas>
+							<pre><code class="code-small">
+ctx.fillStyle = "#f92672";
+ctx.fillRect(100, 50, 100, 100);
+							</code></pre>
+						</div>
+						<div>
+							<canvas id="canvas-rect2" width="300" height="200"></canvas>
+							<pre><code class="code-small">
+ctx.rect(100, 50, 100, 100);
+ctx.stroke();
+							</code></pre>
+						</div>
+					</div>
+				</section>
+				<section>
+					<h2>Lines</h2>
+					<canvas id="canvas-line1" width="300" height="200"></canvas>
+					<pre><code>
+ctx.moveTo(60, 60); // start
+ctx.lineTo(200, 100); // end
+ctx.stroke();
+					</code></pre>
+				</section>
+				<section>
+					<h2>Circles</h2>
+					<div class="grid-rect">
+						<div>
+							<canvas id="canvas-circle" width="300" height="300"></canvas>
+						</div>
+						<div>
+							<canvas id="canvas-circle2" width="300" height="300"></canvas>
+						</div>
+					</div>
+					<pre><code>
+ctx.beginPath();
+ctx.arc(100, 100, 80,      0,           2 * Math.PI);
+    // x,    y,   radius,  startAngle,  endAngle
+ctx.stroke();
+					</code></pre>
+				</section>
+				<section>
+					<h2>Cool example # 1</h2>
+					<canvas id="canvas-ex-01" width="500" height="400"></canvas>
+				</section>
+				<section>
+					<h2>Cool example # 2</h2>
+					<canvas id="canvas-ex-02" width="600" height="300"></canvas>
+					<div class="fragment">More examples: 
+						<a href="http://www.effectgames.com/demos/canvascycle/">http://www.effectgames.com/demos/canvascycle/</a>
+						<a href="http://1000.chromeexperiments.com/">http://1000.chromeexperiments.com/</a>
+					</div>
+				</section>
+			</section>
+			<section>
+				<section>
+					<h2>How to begin with <span class="red">SVG</span></h2>
+					<div class="svg-widthBorder">
+						<svg>
+							<circle r="50" cx="50%" cy="50%" fill="#FFFF00" stroke="#00008B" stroke-width="4"/>
+						</svg>
+					</div>
+					<pre><code>
+<svg>
+  <circle r="50" cx="50%" cy="50%" fill="#FFFF00"  
+          stroke="#00008B" stroke-width="4" />
+</svg>
+						</code>
+					</pre>
+				</section>
+				<section>
+					<h2>Rectangles</h2>
+					<div class="svg-widthBorder">
+						<svg>
+							<rect width="300" height="100" style="fill:rgb(0,0,255); 
+							stroke-width:3; stroke:rgb(0,0,0)"  />
+						</svg>
+					</div>
+					<pre><code>
+<svg>
+  <rect width="300" height="100" style="fill:rgb(0,0,255); 
+  stroke-width:3; stroke:rgb(0,0,0)"  />
+</svg>
+						</code>
+					</pre>
+				</section>
+				<section>
+					<h2>Lines</h2>
+					<div class="svg-widthBorder">
+						<svg>
+							<line x1="0" y1="0" x2="200" y2="200" 
+							style="stroke:rgb(255,0,0);stroke-width:2" />
+						</svg>
+					</div>
+					<pre><code>
+<svg>
+  <line x1="0" y1="0" x2="200" y2="200" 
+  style="stroke:rgb(255,0,0);stroke-width:2" />
+</svg>
+						</code>
+					</pre>
+				</section>
+				<section>
+					<h2>More possibilities of <span class="red">SVG</span></h2>
+					<div class="grid-3">
+						<div>
+							<svg height="250">
+								<polygon points="200,10 250,190 160,210" 
+								style="fill:lime;stroke:purple;stroke-width:1" />
+							</svg>
+						</div>
+						<div>
+							<svg height="250">
+								<polygon points="100,10 40,198 190,78 10,78 160,198"
+								style="fill:lime;stroke:purple;stroke-width:5;fill-rule:nonzero;" />
+							</svg>
+						</div>
+						<div>
+							<svg height="250">
+								<ellipse cx="150" cy="100" rx="150" ry="30" style="fill:purple" />
+								<ellipse cx="150" cy="70" rx="130" ry="20" style="fill:lime" />
+								<ellipse cx="150" cy="45" rx="110" ry="15" style="fill:yellow" />
+							 </svg>
+						</div>
+					</div>
+					<div class="fragment">
+						<svg width="100%" height="300px">
+							<g id="R1" transform="translate(250 250)"> 
+								<ellipse rx="100" ry="0" opacity=".3">
+									<animateTransform attributeName="transform" type="rotate" dur="7s" from="0" to="360" repeatCount="indefinite" />
+									<animate attributeName="cx" dur="8s" values="-20; 220; -20" repeatCount="indefinite" />
+									<animate attributeName="ry" dur="3s" values="10; 60; 10" repeatCount="indefinite" />
+								</ellipse>
+							</g>
+							<use xlink:href="#R1" transform="rotate(72 390 150)" />
+							<use xlink:href="#R1" transform="rotate(144 390 150)" />
+							<use xlink:href="#R1" transform="rotate(216 390 150)" />
+							<use xlink:href="#R1" transform="rotate(288 390 150)" />
+						</svg>
+					</div>
+				</section>
+			</section>
+			<section>
+				<section>
+					<h2>Canvas vs SVG</h2>
+					<table class="comparison">
+						<thead>
+							<tr>
+								<th></th>
+								<th>Canvas</th>
+								<th>SVG</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td class="small-text">Knowledge</td>
+								<td>HTML & JS</td>
+								<td>HTML & XML</td>
+							</tr>
+							<tr>
+								<td class="small-text fragment">Can be modified through</td>
+								<td class="fragment">script</td>
+								<td class="fragment">script & CSS</td>
+							</tr>
+							<tr>
+								<td class="small-text fragment">Interaction</td>
+								<td class="fragment red">No support for event handlers</td>
+								<td class="fragment green">Support for event handlers</td>
+							</tr>
+						</tbody>
+					</table>
+					<div class="fragment">
+						<svg width="500" height="350">
+							<circle id="orange-circle" r="30" cx="50" cy="50" fill="orange" />
+							<animate 
+								xlink:href="#orange-circle"
+								attributeName="cx"
+								from="50"
+								to="450" 
+								dur="5s"
+								begin="click"
+								repeatCount="2"
+								id="circ-anim"/>
+						</svg>
+					</div>		
+				</section>
+				<section>
+					<h2>Canvas vs SVG</h2>
+					<table class="comparison">
+						<thead>
+							<tr>
+								<th></th>
+								<th>Canvas</th>
+								<th>SVG</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td class="small-text fragment">Size of file</td>
+								<td class="fragment"><span class="green">don't increase too much</span></td>
+								<td class="fragment"><span class="red">increase too much</span></td>
+							</tr>
+							<tr>
+								<td class="small-text fragment">Usage</td>
+								<td class="fragment">Difficult pictures, game applications; 
+									<span class="red">not recommended</span> for large screens</td>
+								<td class="fragment">Icons, logos, static pictures, animation; 
+									<span class="green">recommended</span> for large screens</td>
+							</tr>
+						</tbody>
+					</table>
+				</section>
+			</section>
+			<section>
+				<h2>Sources</h2>
+				<p>Google is our best friend :)</p>
+				<div class="grid-3">
+					<div class="fragment"><h3>W3SCHOOL: </h3>
+						<a href="https://www.w3schools.com/graphics/canvas_intro.asp">Canvas</a> &
+						<a href="https://www.w3schools.com/graphics/svg_examples.asp">SVG</a>
+					</div>
+					<div class="fragment"><h3>MDN:</h3>
+						<a href="https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Tutorial">Canvas</a> &
+						<a href="https://developer.mozilla.org/ru/docs/Web/SVG">SVG</a>
+					</div>
+					<div class="fragment"><h3>Article: </h3>
+						<a href="https://www.educba.com/svg-vs-canvas/">"Canvas VS SVG"</a>
+					</div>
+				</div>
+			</section>			
+		</div>
+	</div>
+	<script src="js/reveal.js"></script>
+	<script>
+		// More info about config & dependencies:
+		// - https://github.com/hakimel/reveal.js#configuration
+		// - https://github.com/hakimel/reveal.js#dependencies
+		Reveal.initialize({
+			dependencies: [
+				{ src: 'plugin/markdown/marked.js' },
+				{ src: 'plugin/markdown/markdown.js' },
+				{ src: 'plugin/notes/notes.js', async: true },
+				{ src: 'plugin/highlight/highlight.js', async: true }
+			]
+		});
+	</script>
+	<script src="js/canvas.js"></script>
+	<script src="js/canvas-ex-01.js"></script>
+	<script src="js/canvas-ex-02.js"></script>
+	</body>
+</html>
